@@ -1,0 +1,231 @@
+/* ===========================================================================
+   1. VARIABLES Y ESTRUCTURA BASE
+   =========================================================================== */
+:root {
+    --sidebar-width: 260px;
+    --sidebar-bg: #2c3e50;
+    --sidebar-hover: #34495e;
+    --primary-color: #0d6efd;
+    --primary-dark: #0a58ca;
+    --accent-color: #258cfb;
+    --bg-light: #f4f7f6;
+    --text-light: #ecf0f1;
+    --shadow-soft: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+body {
+    background-color: var(--bg-light);
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden;
+}
+
+/* ===========================================================================
+   2. SIDEBAR (FIJA A LA IZQUIERDA)
+   =========================================================================== */
+.sidebar {
+    height: 100vh;
+    background: var(--sidebar-bg);
+    width: var(--sidebar-width);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding-top: 20px;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+}
+
+    .sidebar h4 {
+        color: #fff;
+        text-align: center;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 1.1rem;
+        padding-bottom: 15px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        margin-bottom: 20px;
+    }
+
+    .sidebar a {
+        color: var(--text-light) !important;
+        display: flex;
+        align-items: center;
+        padding: 12px 25px;
+        text-decoration: none;
+        transition: all 0.3s;
+        border-left: 4px solid transparent;
+    }
+
+        .sidebar a:hover {
+            background: var(--sidebar-hover);
+            padding-left: 30px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+    .sidebar hr {
+        border-top: 1px solid rgba(255,255,255,0.1);
+        margin: 10px 0;
+    }
+
+/* ===========================================================================
+   3. CONTENIDO (ESTE ES EL QUE EXPANDE LA TABLA)
+   =========================================================================== */
+.content {
+    margin-left: var(--sidebar-width); /* Empuja el contenido después de la sidebar */
+    width: calc(100% - var(--sidebar-width)); /* Ocupa el resto exacto de la pantalla */
+    padding: 30px;
+    min-height: 100vh;
+    display: block;
+}
+
+/* IMPORTANTE: Mata el contenedor limitado de Bootstrap */
+.container, .container-fluid {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* ===========================================================================
+   4. TARJETAS Y TABLAS (DISEÑO PREMIUM)
+   =========================================================================== */
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: var(--shadow-soft);
+    background: #fff;
+    width: 100% !important; /* Fuerza el ancho total */
+}
+
+.card-header {
+    background: #fff !important;
+    border-bottom: 1px solid #edf2f7;
+    padding: 18px 25px;
+    color: var(--sidebar-bg);
+}
+
+.table-responsive {
+    padding: 15px;
+}
+
+/* Forzar DataTables al 100% */
+.dataTables_wrapper, table.dataTable {
+    width: 100% !important;
+    margin: 10px 0 !important;
+}
+
+.table thead th {
+    background-color: #f8f9fa;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: #718096;
+    padding: 12px !important;
+}
+
+/* ===========================================================================
+   5. BOTONES PREMIUM
+   =========================================================================== */
+.btn {
+    border-radius: 8px;
+    padding: 8px 18px;
+    font-weight: 600;
+    transition: all 0.2s;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.2);
+    color: #fff !important;
+}
+
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(13, 110, 253, 0.3);
+    }
+
+.btn-light {
+    background: #f8f9fa;
+    color: #333;
+}
+
+/* ===========================================================================
+   7. SECCIÓN DE LOGIN (PANTALLA COMPLETA)
+   =========================================================================== */
+.login-body {
+    background-color: #f4f7f6;
+    background-image: radial-gradient(var(--sidebar-bg) 0.5px, #f4f7f6 0.5px);
+    background-size: 20px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 420px;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-strong);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+    .login-header i {
+        font-size: 3.5rem;
+        color: var(--sidebar-bg);
+        margin-bottom: 15px;
+    }
+
+    .login-header h1 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--sidebar-bg);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+.pw-field {
+    position: relative;
+}
+
+.pw-toggle {
+    position: absolute;
+    right: 15px;
+    top: 38px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #a0aec0;
+    font-size: 1.2rem;
+    z-index: 10;
+}
+
+.btn-login-premium {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #1e3a8a 0%, var(--sidebar-bg) 100%);
+    color: #fff !important;
+    font-weight: bold;
+    margin-top: 20px;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+    .btn-login-premium:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(30, 58, 138, 0.2);
+    }

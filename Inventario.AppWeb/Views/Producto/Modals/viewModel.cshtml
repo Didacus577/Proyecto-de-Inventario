@@ -1,0 +1,64 @@
+﻿<div class="modal fade" id="modalVerProducto" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content shadow-lg border-0 rounded-4">
+            <div class="modal-header bg-info text-white">
+                <h5 class="modal-title"><i class="fa-solid fa-eye me-2"></i> Detalles del Producto</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body bg-light-subtle">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold text-muted small">Nombre del Producto</label>
+                        <input type="text" class="form-control bg-light" id="lblNombre" readonly>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold text-muted small">Categoría</label>
+                        <input type="text" class="form-control bg-light" id="lblCategoria" readonly>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold text-muted small">Marca</label>
+                        <input type="text" class="form-control bg-light" id="lblMarca" readonly>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold text-muted small">Proveedor</label>
+                        <input type="text" class="form-control bg-light" id="lblProveedor" readonly>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label fw-bold text-muted small">Unidad de Medida</label>
+                        <input type="text" class="form-control bg-light" id="lblUnidad" readonly>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label fw-bold text-muted small">Stock Actual</label>
+                        <input type="text" class="form-control bg-light" id="lblStock" readonly>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label fw-bold text-muted small">Stock Mínimo</label>
+                        <input type="text" class="form-control bg-light" id="lblStockMinimo" readonly>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold text-muted small">Fecha de Expiración</label>
+                        <input type="text" class="form-control bg-light" id="lblFechaExpiracion" readonly>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold text-muted small">Estado del Registro</label>
+                        <div id="lblEstadoContainer" class="pt-1">
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-0">
+                    <label class="form-label fw-bold text-muted small">Descripción</label>
+                    <textarea class="form-control bg-light" id="lblDescripcion" rows="3" readonly></textarea>
+                </div>
+            </div>
+            <div class="modal-footer bg-light border-top-0">
+                <button type="button" class="btn btn-secondary px-4" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>

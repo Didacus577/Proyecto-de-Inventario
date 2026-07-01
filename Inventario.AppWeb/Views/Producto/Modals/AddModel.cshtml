@@ -1,0 +1,64 @@
+﻿<div class="modal fade" id="modalProducto" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content shadow-lg border-0 rounded-4">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title"><i class="bi bi-plus-circle me-1"></i> Nuevo Producto</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="formProducto">
+                    <input type="hidden" id="txtIdProducto" value="0">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Nombre <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="txtNombre" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Categoría <span class="text-danger">*</span></label>
+                            <select class="form-select" id="cboCategoria" required></select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Marca <span class="text-danger">*</span></label>
+                            <select class="form-select" id="cboMarca" required></select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Proveedor <span class="text-danger">*</span></label>
+                            <select class="form-select" id="cboProveedor" required></select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">Unidad de Medida</label>
+                            <select class="form-select" id="cboUnidad" required></select>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">Stock Inicial</label>
+                            <input type="number" class="form-control" id="txtStock" value="0">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">Stock Mínimo</label>
+                            <input type="number" class="form-control" id="txtStockMinimo" value="5">
+                        </div>
+                    </div>
+                    <!-- CAMPO AÑADIDO: Fecha de Expiración -->
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Fecha de Expiración</label>
+                            <input type="date" class="form-control" id="txtFechaExpiracion">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Descripción</label>
+                        <textarea class="form-control" id="txtDescripcion" rows="2"></textarea>
+                    </div>
+                    <div class="modal-footer px-0 pb-0">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Guardar Producto</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

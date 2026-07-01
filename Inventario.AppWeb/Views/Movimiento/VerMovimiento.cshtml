@@ -1,0 +1,56 @@
+﻿@model Inventario.AppWeb.Models.ViewModels.VMMovimiento
+@{
+    ViewData["Title"] = "Gestión de Movimientos - Operador";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card shadow-sm">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <span class="fw-bold fs-5">
+            <i class="fa-solid fa-arrows-left-right me-2"></i> Gestión de Movimientos (Operador)
+        </span>
+        
+        <div>
+            <button class="btn btn-danger" onclick="descargarReporteMovimientosPDF()">
+                <i class="fa-solid fa-file-pdf me-1"></i> Exportar Historial PDF
+            </button>
+        
+            <button id="btnNuevo" class="btn btn-primary" onclick="abrirModalRegistro()">
+                <i class="fa-solid fa-plus me-1"></i> Registrar Movimiento
+            </button>
+
+        </div>
+    </div>
+    
+    <div class="card-body">
+        <div class="table-responsive">
+           
+            <table id="tbdata" data-rol="operador" class="table table-striped table-hover align-middle w-100">
+                <thead>
+                    <tr>
+                        <th>FECHA</th>
+                        <th>PRODUCTO</th>
+                        <th>TIPO</th>
+                        <th>CANTIDAD</th>
+                        <th>EMPLEADO</th>
+                        <th class="text-center">ACCIONES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+@await Html.PartialAsync("~/Views/Movimiento/Modals/AddModel.cshtml")
+@await Html.PartialAsync("~/Views/Movimiento/Modals/UpdateModel.cshtml")
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    
+    <script src="~/js/Movimientos_reportes.js" asp-append-version="true"></script>
+    
+    <script src="~/js/vistas/Movimiento_index.js" asp-append-version="true"></script>
+}

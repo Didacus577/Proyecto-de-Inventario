@@ -1,0 +1,29 @@
+﻿<div class="modal fade" id="modalEditarMarca" tabindex="-1" aria-labelledby="modalEditarMarcaLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content shadow-lg border-0 rounded-4">
+            <div class="modal-header bg-warning text-white">
+                <h5 class="modal-title" id="modalEditarMarcaLabel">Modificar Marca</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="formEditarMarca">
+                    <input type="hidden" id="idMarcaEditar">
+                    <div class="mb-3">
+                        <label for="nombreMarcaEditar" class="form-label fw-bold">Nombre de la Marca</label>
+                        <input type="text" class="form-control" id="nombreMarcaEditar" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="descripcionEditar" class="form-label fw-bold">Descripción</label>
+                        <textarea class="form-control" id="descripcionEditar" rows="3"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer bg-light">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="submit" id="btnActualizar" form="formEditarMarca" class="btn btn-warning">
+                    <i class="fa-solid fa-pen-to-square me-1"></i> Guardar Cambios
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

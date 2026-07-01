@@ -1,0 +1,27 @@
+﻿<div class="modal fade" id="modalEditarUnidad" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-warning text-dark">
+                <h5 class="modal-title"><i class="bi bi-pencil-square me-2"></i>Editar Unidad</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="formUnidadEditar">
+                    <input type="hidden" id="txtIdEditar" />
+                    <div class="mb-3">
+                        <label class="form-label">Nombre</label>
+                        <input type="text" id="txtNombreEditar" class="form-control" required />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Abreviatura</label>
+                        <input type="text" id="txtAbreviaturaEditar" class="form-control" required />
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="submit" form="formUnidadEditar" class="btn btn-primary">Guardar Cambios</button>
+            </div>
+        </div>
+    </div>
+</div>

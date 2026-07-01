@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="16.1.1" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="5.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Inventario.DAL\Inventario.DAL.csproj" />
+    <ProjectReference Include="..\Inventario.DTOS\Inventario.DTOS.csproj" />
+    <ProjectReference Include="..\Inventario.Entity\Inventario.Entity.csproj" />
+  </ItemGroup>
+
+</Project>

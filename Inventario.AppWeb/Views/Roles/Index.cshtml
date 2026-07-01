@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "Gestión de Roles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="card shadow-sm">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <span class="fw-bold fs-5">
+            <i class="fa-solid fa-user-shield me-2"></i> Gestión de Roles
+        </span>
+        
+        <div class="d-flex gap-2">           
+            <button class="btn btn-primary" onclick="nuevoRol()">
+                <i class="fa-solid fa-plus me-1"></i> Agregar Rol
+            </button>
+        </div>
+    </div>
+
+    <div class="card-body">
+        <div class="table-responsive">
+          
+            <table id="tbdata" class="table table-striped table-hover align-middle w-100">
+                <thead>
+                    <tr>
+                        <th>ID ROL</th>
+                        <th>NOMBRE DEL ROL</th>
+                        <th class="text-center">ACCIONES</th>
+                    </tr>
+                </thead>
+                <tbody>                 
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+@await Html.PartialAsync("~/Views/Roles/Modals/AddModel.cshtml")
+@await Html.PartialAsync("~/Views/Roles/Modals/UpdateModel.cshtml")
+
+@section Scripts {
+    <script src="~/js/vistas/Roles_Index.js" asp-append-version="true"></script>
+}

@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "Gestión de Marcas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card shadow-sm">
+    <div class="card-header d-flex justify-content-between align-items-center">
+       
+        <span class="fw-bold fs-5">
+            <i class="fa-solid fa-tags me-2"></i> Lista de Marcas
+        </span>
+        
+        <button id="btnNuevo" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalMarca">
+            <i class="fa-solid fa-plus me-1"></i> Agregar Marca
+        </button>
+    </div>
+
+    <div class="card-body">
+       
+        <div class="d-flex mb-4 gap-2">
+            <div class="input-group" style="max-width: 400px;">
+                <span class="input-group-text bg-light"><i class="fa-solid fa-magnifying-glass"></i></span>
+                <input id="searchMarca" type="text" class="form-control" placeholder="Buscar marca...">
+            </div>
+            <button id="btnRefrescar" class="btn btn-secondary"><i class="fa-solid fa-rotate"></i></button>
+        </div>
+
+        <div class="table-responsive">
+           
+            <table id="tbMarcas" class="table table-striped table-hover align-middle w-100">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NOMBRE</th>
+                        <th>DESCRIPCIÓN</th>
+                        <th class="text-center">ACCIONES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                   
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@await Html.PartialAsync("~/Views/Marca/Models/AddModel.cshtml")
+@await Html.PartialAsync("~/Views/Marca/Models/UpdateModel.cshtml")
+
+@section Scripts {
+    <script src="~/js/vistas/Marcas_Index.js" asp-append-version="true"></script>
+}
