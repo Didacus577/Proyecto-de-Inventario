@@ -35,14 +35,14 @@ namespace Inventario.AppWeb.Controllers
 
             try
             {
-                // 1. Mapeamos el ViewModel que viene de la vista al DTO que espera el servicio
+              
                 UsuarioDTO loginDto = new UsuarioDTO
                 {
                     Correo = modelo.Correo,
                     Clave = modelo.Clave
                 };
 
-                // 2. Llamamos al servicio pasando el DTO
+            
                 var usuarioEncontrado = await _loginService.Login(loginDto);
 
                 if (usuarioEncontrado == null)
@@ -52,29 +52,28 @@ namespace Inventario.AppWeb.Controllers
                     return Ok(respuesta);
                 }
 
-                // 3. Generar Token usando el DTO encontrado
+              
                 string tokenGenerado = _authService.GenerarToken(usuarioEncontrado);
 
-                // 4. Mapear el resultado a ViewModel para devolverlo a la vista
+              
                 var vmUsuario = _mapper.Map<VMUsuarios>(usuarioEncontrado);
 
-                // 5. Guardar en sesión (Si estás usando Session Middleware)
-                // Asegúrate de que las propiedades coincidan con tu DTO
+                
                 HttpContext.Session.SetInt32("IdRol", usuarioEncontrado.IdRol);
                 HttpContext.Session.SetString("Token", tokenGenerado);
                 HttpContext.Session.SetString("NombreUsuario", usuarioEncontrado.NombreUsuario);
 
-                // 6. Configurar respuesta exitosa
+               
                 respuesta.Estado = true;
                 respuesta.Objeto = vmUsuario;
                 respuesta.Token = tokenGenerado;
-                respuesta.Url = Url.Action("Index", "Home"); // Genera la URL de forma segura
+                respuesta.Url = Url.Action("Index", "Home"); 
 
                 return Ok(respuesta);
             }
             catch (Exception ex)
             {
-                // Devolvemos el error dentro del formato GenericResponse para que el JS lo maneje
+               
                 respuesta.Estado = false;
                 respuesta.Mensaje = ex.Message;
                 return StatusCode(StatusCodes.Status500InternalServerError, respuesta);
@@ -84,10 +83,9 @@ namespace Inventario.AppWeb.Controllers
         [HttpGet]
         public async Task<IActionResult> Salir()
         {
-            // Limpiar sesión
+           
             HttpContext.Session.Clear();
-
-            // Aquí podrías agregar la lógica para desloguear de Authentication Cookies si las usas
+           
             return RedirectToAction("IniciaSesion", "Login");
         }
     }

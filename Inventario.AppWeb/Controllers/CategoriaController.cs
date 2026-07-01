@@ -66,7 +66,7 @@ namespace Inventario.AppWeb.Controllers
             }
         }
 
-        // 🛡️ ESCRITURA: Solo Administradores
+        
         [HttpPost("CrearCategoria")]
         [Authorize(Roles = "admin")]
         public async Task<IActionResult> Crear([FromBody] VMCategoria modelo)
@@ -90,7 +90,7 @@ namespace Inventario.AppWeb.Controllers
             }
         }
 
-        // 🛡️ MODIFICACIÓN: Solo Administradores
+        
         [HttpPut("EditarCategoria")]
         [Authorize(Roles = "admin")]
         public async Task<IActionResult> Editar([FromBody] VMCategoria modelo)
@@ -112,7 +112,7 @@ namespace Inventario.AppWeb.Controllers
             }
         }
 
-        // 🛡️ ELIMINACIÓN: Solo Administradores
+        
         [HttpDelete("CategoriaEliminar")]
         [Authorize(Roles = "admin")]
         public async Task<IActionResult> Eliminar(int idCategoria)

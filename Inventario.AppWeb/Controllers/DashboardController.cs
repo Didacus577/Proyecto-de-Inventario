@@ -17,7 +17,7 @@ namespace Inventario.AppWeb.Controllers
             _mapper = mapper;
         }
 
-        // Acción corregida: Dashboard
+      
         public IActionResult Dashborard()
         {
             return View();
@@ -28,7 +28,7 @@ namespace Inventario.AppWeb.Controllers
         {
             var lista = await _dashboardService.TopSalidas();
 
-            // Mapear con AutoMapper para evitar nulls
+           
             var data = lista.Select(m => _mapper.Map<VMMovimiento>(m)).ToList();
 
             return Json(new { data });
