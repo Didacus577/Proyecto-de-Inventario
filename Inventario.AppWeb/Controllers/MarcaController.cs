@@ -71,7 +71,7 @@ namespace Inventario.AppWeb.Controllers
 
       
         [HttpPost("CrearMarca")]
-        [Authorize(Roles = "Administrador")]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Crear([FromBody] VMMarca modelo)
         {
             try
