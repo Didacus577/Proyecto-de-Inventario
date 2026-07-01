@@ -69,4 +69,4 @@ El proyecto utiliza un enfoque Database-First. Sigue estos pasos para montar la 
 ---
 
 Aviso:
-Ya hay un usuario creado en la base de datos. Para poder entrar a la cuenta del admin debe ingresar el correo: Diego@gmail.com y la contraseña es: 12345678. y para poder probar las dos cuentas debe crear el rol "admin" u "operador"
+Ya hay un usuario creado en la base de datos. Para poder entrar a la cuenta del admin debe ingresar el correo: Diego@gmail.com y la contraseña es: 12345678. y para poder probar las dos cuentas debe crear el rol "admin" y "operador"
